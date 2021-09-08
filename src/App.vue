@@ -1,0 +1,69 @@
+<template>
+  <router-view></router-view>
+</template>
+
+<script>
+export default {
+  name: "App",
+};
+</script>
+
+<style>
+:root {
+  --body-background-color: #fafafa;
+  --aside-background-color: rgba(0, 0, 0, 0);
+  --menu-text-color: #454545;
+  --menu-background-hover-color: #efefef;
+  --main-background-color: #efefef;
+  --item-background-color: #fafafa;
+  --item-text-color: #0a0a0a;
+  --item-border-color: rgba(255, 255, 255, 0.5);
+  --item-box-shadow-color: rgba(255, 255, 255, 0.3);
+  --item-box-shadow-hover-color: rgba(255, 255, 255, 0.8);
+  --desc-text-color: #a0a0a0;
+  --main-h-text-color: #0a0a0a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-background-color: #0f0f0f;
+    --aside-background-color: rgba(0, 0, 0, 0);
+    --menu-text-color: #454545;
+    --menu-background-hover-color: #1a1a1a;
+    --main-background-color: #1a1a1a;
+    --item-background-color: #0f0f0f;
+    --item-text-color: #a0a0a0;
+    --item-border-color: rgba(0, 0, 0, 0.5);
+    --item-box-shadow-color: rgba(0, 0, 0, 0.3);
+    --item-box-shadow-hover-color: rgba(0, 0, 0, 0.8);
+    --desc-text-color: #454545;
+    --main-h-text-color: #a0a0a0;
+  }
+}
+
+html,
+body,
+body > div {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background: var(--body-background-color);
+}
+
+body > div {
+  display: flex;
+  flex-direction: row;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+</style>
