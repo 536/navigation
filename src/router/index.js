@@ -6,17 +6,17 @@ import Index from '../views/index.vue'
 Vue.use(VueRouter)
 
 const routes = [
-	{
-		path: '/',
-		name: 'index',
-		component: Index
-	}
+  {
+    path: '/',
+    name: 'index',
+    component: Index
+  }
 ]
 
 const router = new VueRouter({
-	mode: 'history',
-	base:'/navigation/',
-	routes
+  mode: 'history',
+  base: '/navigation/',
+  routes
 })
 
 export default router
