@@ -39,6 +39,10 @@ export default {
     --desc-text-color: #454545;
     --main-h-text-color: #a0a0a0;
   }
+
+  img {
+    filter: brightness(60%);
+  }
 }
 
 html,

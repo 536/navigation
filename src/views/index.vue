@@ -33,7 +33,7 @@ export default {
     }
   },
   created() {
-    this.link = this.$route.query.json || '/assets/default.json'
+    this.link = this.$route.query.json || './assets/default.json'
     // 获取链接数据
     axios.get(this.link).then(rep => {
       this.items = rep.data
