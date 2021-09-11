@@ -5,9 +5,7 @@
       <nav>
       </nav>
       <div class="content">
-        <div v-for="(menu, idx) in items" :key="idx">
-          <Category :menu="menu"></Category>
-        </div>
+        <Category v-for="(menu, idx) in items" :key="idx" :menu="menu"></Category>
       </div>
     </main>
   </div>
@@ -28,29 +26,37 @@ export default {
   data() {
     return {
       items: undefined,
-      link: undefined,
       qrcode: undefined,
     }
   },
   created() {
-    this.link = this.$route.query.json || './assets/default.json'
-    // 获取链接数据
-    axios.get(this.link).then(rep => {
-      this.items = rep.data
-    }).catch(e => {
-      console.error(e)
-    })
-
-    // 生成当前页面二维码
-    QRCode.toDataURL(location.href)
-        .then(url => {
-          this.qrcode = url
-        })
-        .catch(err => {
-          console.error(err)
-        })
+    this.getData()
+    this.getQRCode()
+  },
+  computed: {
+    link: function () {
+      return this.$route.query.json || './assets/default.json'
+    }
   },
   methods: {
+    getData() {
+      // 获取链接数据
+      axios.get(this.link).then(rep => {
+        this.items = rep.data
+      }).catch(e => {
+        console.error(e)
+      })
+    },
+    getQRCode() {
+      // 生成当前页面二维码
+      QRCode.toDataURL(location.href)
+          .then(url => {
+            this.qrcode = url
+          })
+          .catch(err => {
+            console.error(err)
+          })
+    },
     scrollTo(e) {
       document.querySelector('main').scrollTo({
         top: document.querySelector(e.target.getAttribute('data-scrollTo')).offsetTop - 20,

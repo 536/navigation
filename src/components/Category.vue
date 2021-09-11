@@ -30,11 +30,21 @@ export default {
   },
   methods: {
     adapted_logo(item) {
+      // 如果没有配置logo则尝试获取‘//+域名+favicon.ico’
       const domain = RegExp(/^http(s)?:/).test(item.url)
         ? item.url.split("/")[2]
         : item.url.split("/")[0];
       return item.logo ? item.logo : "//" + domain + "/favicon.ico";
     },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      // 根据最后一个category的高度设置content的marginBottom，实现导航到最后一个category的时候也能有跳转过程
+      let content = document.querySelector(".category").parentElement;
+      let height = content.lastElementChild.clientHeight;
+      content.style.marginBottom =
+        content.parentElement.clientHeight - height - 40 + "px";
+    });
   },
 };
 </script>
