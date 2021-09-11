@@ -1,25 +1,29 @@
 <template>
   <div>
-    <SideBar :items="items" :scrollTo="scrollTo"></SideBar>
-    <main class="no-scrollbar" ref="main">
+    <aside>
       <nav>
+        <Menu :items="items" :scrollTo="scrollTo" ref="menu"></Menu>
       </nav>
+    </aside>
+    <main class="no-scrollbar" ref="main">
+      <header>
+      </header>
       <div class="content">
-        <Category v-for="(menu, idx) in items" :key="idx" :menu="menu" ref="category"></Category>
+        <Category v-for="(category, idx) in items" :key="idx" :category="category" ref="category"></Category>
       </div>
     </main>
   </div>
 </template>
 
 <script>
-import SideBar from "@/components/SideBar";
-import Category from "@/components/Category";
 import axios from "axios";
+import Category from "@/components/Category";
+import Menu from "@/components/Menu";
 
 export default {
   name: "Index",
   components: {
-    SideBar,
+    Menu,
     Category,
   },
   data() {
@@ -34,9 +38,6 @@ export default {
   computed: {
     link: function () {
       return this.$route.query.json || './assets/default.json'
-    },
-    menus: function () {
-      return document.querySelectorAll('.menu')
     }
   },
   mounted() {
@@ -53,12 +54,12 @@ export default {
     },
     scrollTo(e) {
       document.querySelector('main').scrollTo({
-        top: this.getMenuByText(e.target.innerText).offsetTop - 20,
+        top: this.getCategoryByText(e.target.innerText).offsetTop,
         behavior: 'smooth',
       })
     },
     onscroll() {
-      this.menus.forEach(e => {
+      this.$refs.menu.$refs.list.forEach(e => {
         e.classList.remove('active')
       })
       this.currentMenu().classList.add('active')
@@ -72,21 +73,21 @@ export default {
     },
     currentMenu() {
       if (this.currentCategory()) {
-        for (const e of this.menus) {
+        for (const e of this.$refs.menu.$refs.list) {
           if (e.innerText === this.currentCategory().firstElementChild.id) {
             return e
           }
         }
       }
-      return document.querySelector('.menu')
+      return document.querySelector('.list')
     },
-    getMenuByText(text) {
-      for (const e of this.menus) {
-        if (e.innerText === text) {
-          return e
+    getCategoryByText(text) {
+      for (const e of this.$refs.category) {
+        if (e.$el.firstElementChild.id === text) {
+          return e.$el
         }
       }
-      return document.querySelector('.menu')
+      return document.querySelector('.category')
     }
   }
 }

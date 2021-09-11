@@ -1,7 +1,7 @@
 <template>
   <div class="category">
-    <h3 :id="menu.name">{{ menu.name }}</h3>
-    <div v-for="(item, idx) in menu.links" :key="idx" class="item">
+    <h3 :id="category.name">{{ category.name }}</h3>
+    <div v-for="(item, idx) in category.links" :key="idx" class="item">
       <a v-if="item.url" :href="item.url" class="item-link">
         <img
           class="item-img"
@@ -25,7 +25,7 @@
 export default {
   name: "Category",
   props: {
-    menu: Object,
+    category: Object,
   },
   methods: {
     adapted_logo(item) {

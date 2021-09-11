@@ -56,6 +56,19 @@ aside {
     background: var(--aside-background-color);
 }
 
+nav {
+    flex-grow: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+nav > ol {
+    height: 100%;
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+}
+
 main {
     flex-grow: 1;
     overflow-y: auto;
