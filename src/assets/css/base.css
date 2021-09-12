@@ -75,3 +75,19 @@ main {
     padding: 20px;
     background: var(--main-background-color);
 }
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    aside {
+        display: none;
+    }
+    main {
+        padding: 10px;
+    }
+}

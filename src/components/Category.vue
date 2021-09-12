@@ -113,4 +113,31 @@ h4, p {
   margin: 0;
   font-size: 12px;
 }
+
+@media (max-width: 1400px) {
+  .item {
+    width: calc(25% - 20px);
+    margin: 10px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .item {
+    width: calc(33% - 20px);
+    margin: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    width: calc(50% - 10px);
+    margin: 5px;
+  }
+  .item-link {
+    height: 40px;
+  }
+  .desc {
+    display: none;
+  }
+}
 </style>
