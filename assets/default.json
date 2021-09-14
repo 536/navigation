@@ -1,0 +1,72 @@
+[
+  {
+    "name": "常用",
+    "links": [
+      {
+        "title": "Google",
+        "url": "https://www.google.com/"
+      },
+      {
+        "title": "百度",
+        "url": "https://www.baidu.com/"
+      },
+      {
+        "title": "stackoverflow",
+        "url": "https://stackoverflow.com/search?q="
+      },
+      {
+        "title": "百度翻译",
+        "url": "https://fanyi.baidu.com/"
+      },
+      {
+        "title": "Google Translate",
+        "url": "https://translate.google.com/"
+      }
+    ]
+  },
+  {
+    "name": "编程",
+    "links": [
+      {
+        "title": "Github",
+        "url": "https://github.com/search?q="
+      }
+    ]
+  },
+  {
+    "name": "文档",
+    "links": [
+      {
+        "title": "Python",
+        "url": "https://docs.python.org/zh-cn/3/"
+      },
+      {
+        "title": "Django",
+        "url": "https://docs.djangoproject.com/zh-hans/"
+      },
+      {
+        "title": "MDN",
+        "desc": "Resources for developers, by developers.",
+        "url": "https://developer.mozilla.org"
+      },
+      {
+        "title": "Vuejs",
+        "logo": "https://cn.vuejs.org/images/logo.svg",
+        "url": "https://cn.vuejs.org/"
+      }
+    ]
+  },
+  {
+    "name": "工具",
+    "links": [
+      {
+        "title": "Outlook",
+        "url": "https://outlook.live.com/mail/0/inbox"
+      },
+      {
+        "title": "Processon",
+        "url": "https://www.processon.com/diagrams"
+      }
+    ]
+  }
+]
