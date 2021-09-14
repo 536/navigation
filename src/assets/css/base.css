@@ -11,7 +11,8 @@
     --item-box-shadow-hover-color: rgba(255, 255, 255, 0.8);
     --desc-text-color: #a0a0a0;
     --main-h-text-color: #0a0a0a;
-    --svg-background-color: #a0a0a0;
+    --svg-fill-color: #a0a0a0;
+    --vue-loading-background-color: rgba(255, 255, 255, 0.9);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,7 +29,8 @@
         --item-box-shadow-hover-color: rgba(0, 0, 0, 0.8);
         --desc-text-color: #454545;
         --main-h-text-color: #a0a0a0;
-        --svg-background-color: #454545;
+        --svg-fill-color: #454545;
+        --vue-loading-background-color: rgba(0, 0, 0, 0.9);
     }
     img {
         filter: brightness(60%);
@@ -85,10 +87,6 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-svg {
-    fill: var(--svg-background-color);
 }
 
 @media (max-width: 768px) {

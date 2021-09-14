@@ -1,6 +1,7 @@
 <template>
   <div>
-    <aside>
+    <vue-loading type="bars" color="var(--svg-fill-color)" v-if="loading"></vue-loading>
+    <aside v-else>
       <nav>
         <Menu :items="items" :scrollTo="scrollTo" ref="menu"></Menu>
       </nav>
@@ -39,17 +40,20 @@
 import axios from "axios";
 import Category from "@/components/Category";
 import Menu from "@/components/Menu";
+import {VueLoading} from 'vue-loading-template'
 
 export default {
   name: "Index",
   components: {
-    Menu,
     Category,
+    Menu,
+    VueLoading,
   },
   data() {
     return {
       items: undefined,
       qrcode: undefined,
+      loading: true,
     }
   },
   created() {
@@ -68,6 +72,7 @@ export default {
       // 获取链接数据
       axios.get(this.link).then(rep => {
         this.items = rep.data
+        this.loading = false
       }).catch(e => {
         console.error(e)
       })
@@ -121,13 +126,17 @@ export default {
 }
 
 .links > a {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .links > a + a {
   margin-left: 20px;
+}
+
+.links > a > svg {
+  fill: var(--svg-fill-color);
 }
 </style>
