@@ -121,7 +121,7 @@ export default {
 }
 
 .links > a {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
