@@ -4,13 +4,6 @@
       <nav>
         <Menu :items="items" :scrollTo="scrollTo" ref="menu"></Menu>
       </nav>
-    </aside>
-    <main class="no-scrollbar" ref="main">
-      <header>
-      </header>
-      <div class="content">
-        <Category v-for="(category, idx) in items" :key="idx" :category="category" ref="category"></Category>
-      </div>
       <footer>
         <div class="links">
           <a :href="link">
@@ -31,6 +24,13 @@
           </a>
         </div>
       </footer>
+    </aside>
+    <main class="no-scrollbar" ref="main">
+      <header>
+      </header>
+      <div class="content">
+        <Category v-for="(category, idx) in items" :key="idx" :category="category" ref="category"></Category>
+      </div>
     </main>
   </div>
 </template>
@@ -118,6 +118,13 @@ export default {
   .content {
     margin-bottom: 0 !important;
   }
+}
+
+.links > a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .links > a + a {
