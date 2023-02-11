@@ -33,7 +33,7 @@ yarn lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-## planning
+## TODO
 
 - [x] 从指定json文件读取配置生成页面
 

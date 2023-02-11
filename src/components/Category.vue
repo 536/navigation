@@ -1,7 +1,6 @@
 <template>
   <div class="category">
-    <h3 :id="category.name">{{ category.name }}</h3>
-    <div v-for="(item, idx) in category.links" :key="idx" class="item">
+    <div :id="category.name" v-for="(item, idx) in category.links" :key="idx" class="item">
       <a v-if="item.url" :href="item.url" class="item-link">
         <img
           class="item-img"
@@ -51,11 +50,6 @@ export default {
 .category {
   transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
   padding: 20px 0;
-}
-
-h3 {
-  margin: 0;
-  color: var(--main-h-text-color);
 }
 
 .item {

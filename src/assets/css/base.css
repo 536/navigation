@@ -1,10 +1,10 @@
 :root {
-    --body-background-color: #fafafa;
+    --body-background-color: #f5f5f5;
     --aside-background-color: rgba(0, 0, 0, 0);
     --menu-text-color: #454545;
-    --menu-background-hover-color: #efefef;
-    --main-background-color: #efefef;
-    --item-background-color: #fafafa;
+    --menu-background-hover-color: #e5e5e5;
+    --main-background-color: #e5e5e5;
+    --item-background-color: #f5f5f5;
     --item-text-color: #0a0a0a;
     --item-border-color: rgba(255, 255, 255, 0.5);
     --item-box-shadow-color: rgba(255, 255, 255, 0.3);
